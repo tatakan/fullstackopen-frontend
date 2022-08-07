@@ -18,7 +18,6 @@ const App = () => {
 
   let randIndex = randGener()
   //console.log("current randIndex:", randIndex)
-  
 
   const handlVote = (index) => {
     const cpVotes = [...votes]
@@ -36,14 +35,11 @@ const App = () => {
       if (element > votes[mostVoted]){
         mostVoted = index
       }
-      
     }
     //console.log("mostVoted b4 return", mostVoted)
     return mostVoted
   }
-
-
-    
+   
   return (
     <div>
       <h2>Anecdote of the day</h2>
@@ -51,10 +47,8 @@ const App = () => {
       <br></br>
       <button onClick={() => handlVote(randIndex)}>vote</button>
       <button onClick={() => setSelected(selected + 1)}>next anecdote</button>
-      
       <h2>Anecdote with most votes</h2>
-        {anecdotes[maxVoted(randIndex)]}
-      
+      {anecdotes[maxVoted(randIndex)]}
     </div>
   )
 
